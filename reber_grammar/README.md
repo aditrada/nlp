@@ -2,6 +2,12 @@
 
 Convergence criterion = Early stopping, monitoring validation accuracy, with patience=3
 
+Hyperparameter categories:
+* Dataset: train_sz, batch_sz
+* Model: embed_sz, RNN_type, NN
+* Cost function: binary_cross_entropy
+* Optimizer: optimizer, lr
+
 Hyperparameters under test:
 * Training size: obviously, more data, means faster convergence. But it also means more time to generate the data. 15,000 is a nice sweetspot.
 
