@@ -5,7 +5,7 @@ Problem: Train an Encoder–Decoder model that can convert a date string from on
 Hyperparameter categories:
 * Dataset: train_sz, batch_sz
 * Model: embed_sz, RNN_type, NN
-* Cost function: binary_cross_entropy
+* Cost function: sparse_cross_entropy
 * Optimizer: optimizer, lr
 
 Convergence criterion = Train for 30 epoxhs. Early stopping with patience 3, using the metric val_accuracy.
@@ -48,7 +48,7 @@ Notes:
 
 * **Batch Size:**
     - The larger the batch size, the faster an epoch is. This makes sense, because there are a fewer steps per epoch, and more parallel computation is being done.
-    - The larger tha batch size, the slower the overall training. With a larger batch size, we can compute a more accurate estimate of the gradient. Recall the gradient is the mean of the gradients over all examples in the batch. The standard error of the mean estimated from n samples is given by sigma/sqrt(n). The denominator of sqrt(n) shows that there are less than linear returns to using mode examples ot esitmate the gradient.
+    - The larger tha batch size, the slower the overall training. With a larger batch size, we can compute a more accurate estimate of the gradient. Recall the gradient is the mean of the gradients over all examples in the batch. The standard error of the mean estimated from n samples is given by sigma/sqrt(n). The denominator of sqrt(n) shows that there are less than linear returns to using mode examples to esitmate the gradient.
     The optimization algorithm converges much faster if we are allowed to rapidly compute approximate estimates of the gradient rather than slowly computing the exact gradient.
 
 * **RNN Type:**
